@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mahmoud Helmy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1E1E2E;
+            color: white;
+            text-align: center;
+            
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #0051A2, #003A7F);
+            padding: 20px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img { 
+            margin-left: 15px;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+        }
+        .logo img:hover {   
+            transform: scale(1.3);
+            transition: 0.3s ease-in-out;
+        }
+      
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: #FFD700;
+            transform: scaleX(0);
+            transition:  0.3s ease-in-out;
+        }
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition:  0.3s ease-in-out;
+            direction: rtl;
+            text-align: right;  
+        }
+        .about-content:hover {
+            transform: scale(1.04);
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+
+        .service-section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition:  0.3s ease-in-out;
+        }
+        .service-section:hover {
+            transform: scale(1.04);
+            background: rgba(255, 215, 0, 0.2);
+        }
+        .service-section h3 {
+            font-size: 24px;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+        .service-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+            text-align: right;
+        }
+        .service-list li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            
+        }
+        .service-list li::before {  
+            content: "\2022";
+            font-size: 24px;
+            color: #FFD700;
+            left: 0;
+            top: 0;
+            padding-left: 10px;  
+        }
+      
+          /* تنسيقات جديدة لقسم الخبرات */
+          .experience-section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            direction: rtl;
+        }
+        .experience-section:hover {
+            transform: scale(1.04);
+            background: rgba(255, 215, 0, 0.2);
+        }
+        .experience-section h3 {
+            font-size: 24px;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+        .experience-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+        .experience-list li {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fff;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .experience-list li::before {
+            content: "\2022";
+            font-size: 24px;
+            color: #FFD700;
+            padding-left: 10px;
+            left: 0;
+            top: 0;
+        }
+
+        .works {
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px; 
+            padding: 20px;
+            
+        }
+
+        .works h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding: 0px;
+        }
+
+        .works h3 {
+            text-align: center;
+            font-size: 20px;
+            color: #ffd700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+
+        .education {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .education li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition:  0.3s ease-in-out;
+            width: 40%;
+        }
+
+        .education li:hover {
+            transform: scale(1.03);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+
+        .skills-container {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .social-icons a i {
+        transition:  0.3s ease-in-out;
+        }
+
+        .linkedin:hover i {
+        transform: scale(1.3); /* تكبير أيقونة لينكدإن فقط */
+        }
+        
+        .whatsapp:hover i {
+        transform: scale(1.3);
+        }
+        .gmail:hover i {
+        transform: scale(1.3);
+        }
+        .download:hover i {
+        transform: scale(1.3);
+        }
+        
+        .skill {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill:hover {
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.3);
+        }
+        .language-switch {
+            display: flex;
+            align-items: center;
+        }
+        .language-switch button {
+            background: #FFD700;
+            color: #1E1E2E;
+            font-weight: bold;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+        .language-switch button:hover {
+            background: #FFC107;
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }   
+       
+   
+        section {
+            padding: 50px;
+            display: none;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease-in-out;
+        }
+        section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 30px;
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #FFD700;
+            
+        }
+        .contact-info {
+            margin-top: 20px;
+            color: white;
+        }
+        .contact-info p {
+            font-size: 18px;
+        }
+
+      
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            sections[0].classList.add("active");
+
+            document.querySelectorAll("nav ul li a").forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    sections.forEach(sec => sec.classList.remove("active"));
+                    document.getElementById(targetId).classList.add("active");
+                });
+            });
+
+            let langButton = document.getElementById("langToggle");
+            langButton.addEventListener("click", function() {
+                if (langButton.textContent === "AR") {
+                    langButton.textContent = "EN";
+                    document.documentElement.lang = "en";
+                    changeTextToEnglish();
+                } else {
+                    langButton.textContent = "AR";
+                    document.documentElement.lang = "ar";
+                    changeTextToArabic();
+                }
+            });
+
+          
+        });
+    </script>
+    
+</head>
+<body>
+    <header>
+        <div class="language-switch">
+            <button id="langToggle">AR</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#contact">اتصل بي</a></li>
+                <li><a href="#skills">المهارات التقنية</a></li>
+                <li><a href="#works"> أعمالي</a></li>
+                <li><a href="#experiences">الخبرات</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#about">نبذة عني</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <h1>محمود حلمي</h1>
+            <img src="../Mahmoud Helmy/img/لوجو.jpg" alt="لوجو الموقع">
+        </div>
+    </header>
+
+    <section id="about" class="active">
+        <div class="container">
+            <h2>  نبذة عني</h2>
+            <div class="about-content">
+                <p>مصمم ومطور محتوى تعليمي تفاعلي أسعى إلى التطوير والتميز في مجال التعليم الإلكتروني لإنشاء مواد تعليمية أكثر تفاعلية وذات جودة عالية تسهل عملية التعلم على المتعلم وتكون مثيرة للاهتمام بالنسبة له وبعيدة عن التلقين الذي يصيب المتعلم بالملل</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>المهارات التقنية</h2>
+            <div class="skills-container">
+                <div class="skill">Microsoft Word</div>
+                <div class="skill">Microsoft PowerPoint</div>
+                <div class="skill">Microsoft Excel,SharePoint</div>
+                <div class="skill">Adobe Illustrator</div>
+                <div class="skill">Adobe After Effects</div>
+                <div class="skill">Adobe Photoshop</div>
+                <div class="skill">LMS (Talent LMS)</div>
+                <div class="skill">Articulate Storyline 2, 3, 360</div>
+                <div class="skill">Articulate Rise 360</div>
+                <div class="skill">Adobe Premiere</div>
+                <div class="skill">Audacity</div>
+                <div class="skill">OBS Studio</div>
+                <div class="skill">Adobe Captivate</div>
+                <div class="skill">H5P</div>
+                <div class="skill">SCORM</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences">
+        <div class="container">
+            <h2>الخبرات</h2>
+            <div class="experience-section">
+                <h3>Instructional designer - Full time at Yanabea for Training and Development - June 2024 - Present                 </h3>
+                <ul class="experience-list">
+                    <li>كتابة سيناريوهات تعليمية جذابة لتبسيط المفاهيم اللغوية للأطفال وتحفيز مشاركتهم الفعالة.</li>
+                    <li>تصميم وتنفيذ أنشطة تعليمية تركز على مهارات القراءة والكتابة والإملاء باللغة العربية.</li>
+                    <li>تطوير أنشطة تعليمية تفاعلية وألعاب تعليمية مبتكرة باللغة العربية باستخدام Articulate Storyline.</li>
+                    <li>دمج الوسائط المتعددة مثل الرسوم المتحركة والصوت لتعزيز تجربة التعلم التفاعلية.</li>
+                    <li>اختبار الأنشطة والألعاب لضمان فعاليتها ومواءمتها مع الأهداف التعليمية.</li>
+                    <li>التعاون مع فريق الأكاديمية لتصميم محتوى تعليمي يلبي احتياجات الطلاب.</li>
+                </ul>
+            </div>
+            <div class="experience-section">
+                <h3> E-Learning developer - Freelancer at Islamic University of Madinah - October 2024</h3>
+                <ul class="experience-list">
+                    <li>تنفيذ أكثر من 14 نشاطًا تعليميًا تفاعليًا باستخدام برنامج Articulate Storyline لدعم تدريس أصول الفقه.</li>
+                    <li>تصميم أنشطة تعليمية مبتكرة، بما في ذلك التمارين والاختبارات التفاعلية، لتعزيز تجربة التعلم لدى الطلاب.</li>
+                    <li>تحسين جودة المحتوى التعليمي من خلال دمج الوسائط المتعددة مثل الرسوم المتحركة والصوت.</li>
+                    <li>لتأكد من أن الأنشطة تتوافق مع معايير التعلم الإلكتروني واختبار فعاليتها قبل إطلاقها.</li>
+                </ul>
+            </div>
+            <div class="experience-section">
+              <h3>E-Learning developer - Freelancer at USAID MTC, Technical education courses schools in Egypt - December 2023 - 2024 </h3>
+                <ul class="experience-list">
+                    <li>تنفيذ أكثر من 14 نشاطًا تعليميًا تفاعليًا باستخدام برنامج Articulate Storyline لدعم تدريس أصول الفقه.</li>
+                    <li>تصميم أنشطة تعليمية مبتكرة، بما في ذلك التمارين والاختبارات التفاعلية، لتعزيز تجربة التعلم لدى الطلاب.</li>
+                    <li>تحسين جودة المحتوى التعليمي من خلال دمج الوسائط المتعددة مثل الرسوم المتحركة والصوت.</li>
+                    <li>لتأكد من أن الأنشطة تتوافق مع معايير التعلم الإلكتروني واختبار فعاليتها قبل إطلاقها.</li>
+                </ul>
+            </div>
+            <div class="experience-section">
+                <h3>E-Learning specialist - Freelancer  at Professor Alaa Jarad, - UK Vice Chancellor, ALM College of Higher Education - December 2023  </h3>
+                  <ul class="experience-list">
+                      <li>تطوير دورة تفاعلية باستخدام Articulate Storyline</li>
+                      <li>تحويل محتوى PowerPoint إلى دورة تفاعلية على Articulate Storyline عن طريق إدخال النص وإضافة التفاعلات والأيقونات.</li>
+                      <li>تسجيل الصوت للدورة وتنسيق المحتوى التعليمي داخل البرنامج لتعزيزالتجربة التعليمية.</li>
+                      <li>جمع الصور والأيقونات المناسبة لضمان مشاركة الطلاب وتعزيز الفهم.</li>
+                      <li>توفير تجربة تعليمية تفاعلية وجذابة تتوافق مع أهداف المادة التعليمية.</li>
+                  </ul>
+              </div>
+              <div class="experience-section">
+                <h3>E-Learning developer - Full time at Almotahida Education Group - May 2022-2024 </h3>
+                  <ul class="experience-list">
+                     <li> الكبار:
+                        قطر -  تنفيذ مشروع لمساعدة الناطقين بغير العربية، يتضمن أنشطة تعليمية للتعرف على الأسماء والأفعال والأسماء المركبة.</li>
+                     <li>رياض الأطفال حتى الصف الثاني عشر - وزارة التربية والتعليم، سلطنة عمان: تنفيذ العديد من الأنشطة التعليمية التفاعلية والألعاب والمحاكاة للأطفال، تتضمن مواد مثل العلوم واللغة العربية والدين والرياضيات.</li>
+                    <li>تصميم وتطوير محتوى تعليمي مبتكر باستخدام Articulate Storyline لتحفيز الطلاب على التفاعل والتعلم بطريقة ممتعة وفعالة.</li>
+                    <li>استخدام الوسائط المتعددة مثل الصور والفيديو والرسوم المتحركة لتعزيز تجربة التعلم وتبسيط المفاهيم الأكاديمية.</li>
+                    <li>اختبار الأنشطة التعليمية والتأكد من فعاليتها في تحسين مستوى التفاعل والفهم بين الطلاب.</li>
+                    <li>التعاون مع فريق المشروع لضمان تنفيذ الأنشطة وفقًا للمعايير والمواصفات المطلوبة.</li>
+                  </ul>
+              </div>
+        </div>
+    </section>
+    
+
+    <section id="services">
+        <div class="container">
+            <h2>الخدمات</h2>
+            <div class="service-section">
+                <h3>تحليل الاحتياجات التعليمية</h3>
+                <ul class="service-list">
+                    <li>فهم الفئة المستهدفة (مثل الطلاب أو الموظفين) وتحليل احتياجاتهم.</li>
+                    <li>تحديد الأهداف التعليمية التي يجب تحقيقها.</li>
+                    <li>تحليل المحتوى المطلوب وتحديد أولوياته.</li>
+                </ul>
+            </div>
+            <div class="service-section">
+                <h3>تصميم استراتيجيات التعليم</h3>
+                <ul class="service-list">
+                    <li>اختيار الطريقة المناسبة لتقديم المعلومات (مثل الفيديوهات، الألعاب التعليمية، الأنشطة التفاعلية).</li>
+                    <li>تصميم سيناريوهات المحتوى التي تناسب الفئة المستهدفة.</li>
+                </ul>
+            </div>
+            <div class="service-section">
+                <h3>تطوير المحتوى التعليمي</h3>
+                <ul class="service-list">
+                    <li>كتابة النصوص التعليمية بشكل واضح ومنظم.</li>
+                    <li>استخدام برامج التصميم التعليمي لإنشاء محتوى تفاعلي.</li>
+                    <li>تصميم واختيار الوسائط مثل الصور، الفيديوهات، والرسوم التوضيحية.</li>
+                </ul>
+            </div>
+            <div class="service-section">
+                <h3>اختبار وتقييم المحتوى</h3>
+                <ul class="service-list">
+                   
+                    <li>مراجعة المحتوى للتأكد من دقته وجودته.</li>
+                    <li>تجربة الأنشطة التفاعلية لضمان عملها بسلاسة.</li>
+                    <li>تقييم المحتوى بناءً على ملاحظات الفئة المستهدفة أو المختصين.</li>
+                </ul>
+            </div>
+    
+            <!-- تنفيذ ونشر المحتوى -->
+            <div class="service-section">
+                <h3>تنفيذ ونشر المحتوى</h3>
+                <ul class="service-list">
+                    <li>تحميل المحتوى على منصات التعليم الإلكتروني (LMS) أو المواقع.</li>
+                    <li>توفير الإرشادات حول كيفية استخدام المحتوى.</li>
+                    <li>ضمان توافق المحتوى مع الأجهزة المختلفة (كمبيوتر، هاتف، تابلت).</li>
+                </ul>
+            </div>
+    
+            <!-- التطوير والتحسين المستمر -->
+            <div class="service-section">
+                <h3>التطوير والتحسين المستمر</h3>
+                <ul class="service-list">
+                    <li>جمع الملاحظات من المتعلمين أو المستخدمين.</li>
+                    <li>تحديث المحتوى ليكون مواكبًا للتطورات الجديدة.</li>
+                    <li>تحسين الأنشطة لتكون أكثر تفاعلية وجاذبية.</li>
+                </ul>
+            </div>
+    
+            <!-- التعاون مع الفريق -->
+            <div class="service-section">
+                <h3>التعاون مع الفريق</h3>
+                <ul class="service-list">
+                    <li>العمل مع خبراء المادة لتحديد المحتوى التعليمي.</li>
+                    <li>التنسيق مع المصممين الجرافيكيين والمبرمجين لضمان جودة التصميم والتقنيات المستخدمة.</li>
+                </ul>
+            </div>
+
+    </section>
+
+    <section id="works">
+        <div class="works">
+            <h2>أعمالي</h2>
+            
+            <!-- Education Game -->
+            <h3>لعبة تعليمية</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Educational Game .mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+    
+            <!-- For second year students of faculty of pharmacy -->
+            <h3>لطلبة السنة الثانية بكلية الصيدلة</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/For second year students of faculty of pharmacy .mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+    
+            <!-- Questions game -->
+            <h3>لعبة الأسئلة</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Questions Game.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+    
+            <!-- How Many -->
+            <h3>كم العدد؟</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/How Many.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3> تلوين الصورة</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Color This Picture.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+        
+
+        <h3> أضرار التدخين</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Dangers of Smoking .mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+            <h3>  لعبة المتاهة</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Feed The dog.mp4 " type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3> لعبة المطابقة </h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/MATCH.mp4 " type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+            <h3> لعبة الذاكرة</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Memory game.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3>  الحواس</h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../9.PNG">
+                        <source src="../Mahmoud Helmy/videos/Senses.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3>  حل المسالة الرياضية </h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Solve...mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3>  عجلة الحظ  </h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Spinning wheel (قصص الأنبياء) .mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+
+            <h3>  اسحب الشكل  </h3>
+            <ul class="education">
+                <li>
+                    <video controls poster="../0.PNG">
+                        <source src="../Mahmoud Helmy/videos/Drag the shape.mp4" type="video/mp4">
+                    </video>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h3>اتصل بي</h3>
+
+            <div class="social-icons">
+                <a class="linkedin" href="https://www.linkedin.com/in/mahmoud-helmy-248a76218/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="whatsapp" href="https://wa.me/+0201551078975" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a class="gmail" href="mailto:mahmoud.helmi13072@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a class="download" href="../Mahmoud Helmy/cv/Mahmoud_Helmy_CV.pdf" download="CV_Mahmoud_Helmy.pdf" title=""><i class="fas fa-download"></i>  </a>    
+            </div>
+            
+    </section>
+    
+</body>
+</html>
